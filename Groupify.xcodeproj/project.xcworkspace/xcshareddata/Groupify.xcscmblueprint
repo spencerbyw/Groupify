@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "7FE8B6912868D56304B41F84AC525A51C5BCE9B1",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "7FE8B6912868D56304B41F84AC525A51C5BCE9B1" : 0,
+    "6217B6C38185CDA4077FF1430CDC92F88C375B21" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "35D63206-54E0-467D-BE18-CE3CBF1531D3",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "7FE8B6912868D56304B41F84AC525A51C5BCE9B1" : "Groupify\/",
+    "6217B6C38185CDA4077FF1430CDC92F88C375B21" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Groupify",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Groupify.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github-PERSONAL:ejmarsh1\/CSE469-Course-Project.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6217B6C38185CDA4077FF1430CDC92F88C375B21"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:spencerbyw\/Groupify.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7FE8B6912868D56304B41F84AC525A51C5BCE9B1"
+    }
+  ]
+}
