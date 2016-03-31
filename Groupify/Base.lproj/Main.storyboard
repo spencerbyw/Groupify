@@ -648,7 +648,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="Please add your schedule availability, as well as the address of a preferred meeting place." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bPe-Dr-UTh">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Please add your schedule availability, as well as the address of a preferred meeting place." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bPe-Dr-UTh">
                                 <rect key="frame" x="40" y="91" width="240" height="72"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -657,10 +657,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="bPe-Dr-UTh" firstAttribute="centerX" secondItem="GQ1-Bn-nj6" secondAttribute="centerX" id="DZR-oT-Ee5"/>
-                            <constraint firstItem="bPe-Dr-UTh" firstAttribute="leading" secondItem="GQ1-Bn-nj6" secondAttribute="leadingMargin" constant="24" id="JFw-pO-IRS"/>
-                            <constraint firstItem="9cA-Ed-ekh" firstAttribute="top" secondItem="bPe-Dr-UTh" secondAttribute="bottom" constant="405" id="M6V-rs-QxD"/>
-                            <constraint firstItem="bPe-Dr-UTh" firstAttribute="top" secondItem="eT3-Fg-pt5" secondAttribute="bottom" constant="27" id="Qa9-Vh-Khx"/>
+                            <constraint firstItem="bPe-Dr-UTh" firstAttribute="top" secondItem="eT3-Fg-pt5" secondAttribute="bottom" constant="71" id="HLR-hT-0bP"/>
+                            <constraint firstItem="9cA-Ed-ekh" firstAttribute="top" secondItem="bPe-Dr-UTh" secondAttribute="bottom" constant="405" id="WWt-Ih-FQ7"/>
+                            <constraint firstItem="bPe-Dr-UTh" firstAttribute="centerX" secondItem="GQ1-Bn-nj6" secondAttribute="centerX" id="hoV-x3-BJ0"/>
+                            <constraint firstItem="bPe-Dr-UTh" firstAttribute="leading" secondItem="GQ1-Bn-nj6" secondAttribute="leadingMargin" constant="24" id="m73-Cd-B2p"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Meeting Availability" id="8mY-oQ-vgN"/>
