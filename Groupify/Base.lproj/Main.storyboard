@@ -395,7 +395,7 @@
         <!--Manage Groups-->
         <scene sceneID="FEr-BS-zfY">
             <objects>
-                <viewController id="Pea-Qj-4Wf" sceneMemberID="viewController">
+                <viewController id="Pea-Qj-4Wf" customClass="ManageGroupsVC" customModule="Groupify" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SLv-0p-kLd"/>
                         <viewControllerLayoutGuide type="bottom" id="25X-Mc-pH9"/>
@@ -443,6 +443,9 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="Pma-M8-E6B" id="kMv-2j-Ypk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aiH-uo-OoY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

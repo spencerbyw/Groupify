@@ -13,6 +13,7 @@
 		303939291CA4F3780045762D /* Groupify.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 303939271CA4F3780045762D /* Groupify.xcdatamodeld */; };
 		3039392B1CA4F3780045762D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3039392A1CA4F3780045762D /* Assets.xcassets */; };
 		3039392E1CA4F3780045762D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3039392C1CA4F3780045762D /* LaunchScreen.storyboard */; };
+		303939361CADFD600045762D /* ManageGroupsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303939351CADFD600045762D /* ManageGroupsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		3039392A1CA4F3780045762D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3039392D1CA4F3780045762D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3039392F1CA4F3780045762D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		303939351CADFD600045762D /* ManageGroupsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageGroupsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				303939201CA4F3780045762D /* AppDelegate.swift */,
 				303939221CA4F3780045762D /* ViewController.swift */,
+				303939351CADFD600045762D /* ManageGroupsVC.swift */,
 				303939241CA4F3780045762D /* Main.storyboard */,
 				3039392A1CA4F3780045762D /* Assets.xcassets */,
 				3039392C1CA4F3780045762D /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				303939231CA4F3780045762D /* ViewController.swift in Sources */,
+				303939361CADFD600045762D /* ManageGroupsVC.swift in Sources */,
 				303939291CA4F3780045762D /* Groupify.xcdatamodeld in Sources */,
 				303939211CA4F3780045762D /* AppDelegate.swift in Sources */,
 			);
@@ -290,6 +294,7 @@
 				303939341CA4F3780045762D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
