@@ -16,10 +16,22 @@ class ViewController: UIViewController {
         communicateWithGoogle()
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        navigationController?.setNavigationBarHidden(navigationController?.navigationBarHidden == false, animated: true)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        navigationController?.setNavigationBarHidden(navigationController?.navigationBarHidden == false, animated: true)
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
     }
     
     func communicateWithGoogle() {
