@@ -30,12 +30,10 @@ class ManageGroupsVC: UIViewController, NSFetchedResultsControllerDelegate {
     }
     
     func getFetchRequest() -> NSFetchRequest {
-        
         let fetchRequest = NSFetchRequest(entityName: "Member")
         let sortDescripter = NSSortDescriptor(key: "name", ascending: true)
         fetchRequest.sortDescriptors = [sortDescripter]
         return fetchRequest
-        
     }
 
     
@@ -46,7 +44,9 @@ class ManageGroupsVC: UIViewController, NSFetchedResultsControllerDelegate {
         dataViewController.delegate = self
         do {
             try dataViewController.performFetch()
+            print("Member fetch performed (\(dataViewController.fetchedObjects!.count) objects)")
         } catch _ {
+            print("Member list could not be fetched.")
         }
         tableView.reloadData()
     }
@@ -68,6 +68,7 @@ class ManageGroupsVC: UIViewController, NSFetchedResultsControllerDelegate {
         let memberInfo = dataViewController.objectAtIndexPath(indexPath) as! Member
         let name = memberInfo.name
         cell.textLabel?.text = name
+        print("displaying cell")
         return cell
     }
     
@@ -75,11 +76,11 @@ class ManageGroupsVC: UIViewController, NSFetchedResultsControllerDelegate {
         print("You selected cell #\(indexPath.row)!")
     }
     
-    func confirmDelete(place: String) {
-        let alert = UIAlertController(title: "Delete Place", message: "Are you sure you want to permanently delete \(place)?", preferredStyle: .ActionSheet)
+    func confirmDelete(member: String) {
+        let alert = UIAlertController(title: "Delete Member", message: "Are you sure you want to permanently delete \(member)?", preferredStyle: .ActionSheet)
         
-        let DeleteAction = UIAlertAction(title: "Delete", style: .Destructive, handler: handleDeletePlace)
-        let CancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: cancelDeletePlace)
+        let DeleteAction = UIAlertAction(title: "Delete", style: .Destructive, handler: handleDeleteMember)
+        let CancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: cancelDeleteMember)
         
         alert.addAction(DeleteAction)
         alert.addAction(CancelAction)
@@ -91,7 +92,7 @@ class ManageGroupsVC: UIViewController, NSFetchedResultsControllerDelegate {
         self.presentViewController(alert, animated: true, completion: nil)
     }
     
-    func handleDeletePlace(alertAction: UIAlertAction!) -> Void {
+    func handleDeleteMember(alertAction: UIAlertAction!) -> Void {
         if let indexPath = deleteMemberIndexPath {
             tableView.beginUpdates()
             
@@ -104,20 +105,20 @@ class ManageGroupsVC: UIViewController, NSFetchedResultsControllerDelegate {
         }
     }
     
-    func cancelDeletePlace(alertAction: UIAlertAction!) {
+    func cancelDeleteMember(alertAction: UIAlertAction!) {
         deleteMemberIndexPath = nil
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "detailSegue" {
+        if segue.identifier == "memberDetailSegue" {
             if let viewController: MemberInfoVC = segue.destinationViewController as? MemberInfoVC {
                 let selectedIndex: NSIndexPath = self.tableView.indexPathForCell(sender as! UITableViewCell)!
-                let place = dataViewController.fetchedObjects![selectedIndex.row]
-                viewController.selectedMember = place as? Member;
+                let member = dataViewController.fetchedObjects![selectedIndex.row]
+                viewController.selectedMember = member as? Member;
                 viewController.addSegue = false
                 
             }
-        } else if segue.identifier == "addSegue" {
+        } else if segue.identifier == "addMemberSegue" {
             if let viewController: MemberInfoVC = segue.destinationViewController as? MemberInfoVC {
                 viewController.addSegue = true
                 viewController.context = self.context

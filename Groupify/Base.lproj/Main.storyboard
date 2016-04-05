@@ -416,7 +416,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="HV6-PC-dRf" kind="push" id="ZV7-Zf-Cfa"/>
+                                            <segue destination="HV6-PC-dRf" kind="push" identifier="memberDetailSegue" id="ZV7-Zf-Cfa"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -438,7 +438,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <state key="normal" title="+"/>
                                 <connections>
-                                    <segue destination="HV6-PC-dRf" kind="push" id="146-9E-CPx"/>
+                                    <segue destination="HV6-PC-dRf" kind="push" identifier="addMemberSegue" id="146-9E-CPx"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -472,7 +472,7 @@
         <!--Add/Edit Group Member Info-->
         <scene sceneID="wvz-Y3-vyC">
             <objects>
-                <viewController id="HV6-PC-dRf" sceneMemberID="viewController">
+                <viewController id="HV6-PC-dRf" customClass="MemberInfoVC" customModule="Groupify" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cXy-2I-tGj"/>
                         <viewControllerLayoutGuide type="bottom" id="SDF-wX-zGR"/>
@@ -514,7 +514,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emali:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OXI-B8-dkc">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OXI-B8-dkc">
                                         <rect key="frame" x="14" y="97" width="46" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="46" id="zn7-Xg-shj"/>
@@ -618,6 +618,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uZt-fv-pdb">
                                 <rect key="frame" x="111" y="518" width="98" height="30"/>
                                 <state key="normal" title="Save Changes"/>
+                                <connections>
+                                    <action selector="saveMemberInfo:" destination="HV6-PC-dRf" eventType="touchUpInside" id="f9f-2m-Q7x"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h2E-AH-N0T">
                                 <rect key="frame" x="88" y="365" width="144" height="30"/>
@@ -640,6 +643,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add/Edit Group Member Info" id="YEu-T8-9ko"/>
+                    <connections>
+                        <outlet property="addressField" destination="SJg-gm-yjF" id="cvK-n5-BAn"/>
+                        <outlet property="emailField" destination="Uww-he-ZN4" id="fzq-vB-hYD"/>
+                        <outlet property="groupName" destination="JoC-lW-nlO" id="fXR-6Y-8EU"/>
+                        <outlet property="groupNumber" destination="dza-Ek-T3G" id="PY3-P4-ASg"/>
+                        <outlet property="imgBox" destination="de8-5y-R59" id="Tgd-4j-Yrw"/>
+                        <outlet property="nameField" destination="SLu-a3-DWN" id="Spm-Hy-da4"/>
+                        <outlet property="phoneField" destination="VE6-Gx-5Ba" id="CtI-2S-k0W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3oz-GM-a0A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
