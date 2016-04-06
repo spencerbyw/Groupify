@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import CoreData
 
-class ManageGroupsVC: UIViewController, NSFetchedResultsControllerDelegate {
+class ManageGroupsVC: UIViewController, NSFetchedResultsControllerDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     var deleteMemberIndexPath: NSIndexPath? = nil
     
@@ -22,11 +22,8 @@ class ManageGroupsVC: UIViewController, NSFetchedResultsControllerDelegate {
     var temp_member:Member? = nil
     
     func getFetchResultsController() -> NSFetchedResultsController {
-        
         dataViewController = NSFetchedResultsController(fetchRequest: getFetchRequest(), managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-        
         return dataViewController
-        
     }
     
     func getFetchRequest() -> NSFetchRequest {
@@ -39,6 +36,7 @@ class ManageGroupsVC: UIViewController, NSFetchedResultsControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.dataSource = self
         dataViewController = getFetchResultsController()
         
         dataViewController.delegate = self
@@ -68,7 +66,6 @@ class ManageGroupsVC: UIViewController, NSFetchedResultsControllerDelegate {
         let memberInfo = dataViewController.objectAtIndexPath(indexPath) as! Member
         let name = memberInfo.name
         cell.textLabel?.text = name
-        print("displaying cell")
         return cell
     }
     

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import CoreData
 
-class MemberInfoVC: UIViewController {
+class MemberInfoVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var phoneField: UITextField!
     @IBOutlet weak var emailField: UITextField!
@@ -18,6 +18,7 @@ class MemberInfoVC: UIViewController {
     @IBOutlet weak var groupNumber: UITextField!
     @IBOutlet weak var addressField: UITextField!
     @IBOutlet weak var imgBox: UIImageView!
+    @IBOutlet var mainView: UIView!
     
     
     var selectedMember: Member?
@@ -26,10 +27,26 @@ class MemberInfoVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if addSegue == false {
+            setupMemberInterface()
+        }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func setupMemberInterface() {
+        nameField.text = selectedMember!.name
+        phoneField.text = selectedMember!.phone
+        emailField.text = selectedMember!.email
+        groupName.text = selectedMember!.group_name
+        groupNumber.text = selectedMember!.group_number
+        addressField.text = selectedMember!.address
+        if selectedMember!.profile_picture != nil {
+            let temp_img_data = selectedMember!.profile_picture! as NSData
+            imgBox.image = UIImage(data: temp_img_data, scale: 1.0)
+        }
     }
     
     @IBAction func saveMemberInfo(sender: AnyObject) {
@@ -62,10 +79,9 @@ class MemberInfoVC: UIViewController {
                 // STILL LACKING SELECTED MEETING TIME
                 
                 do {
-                    print("here!")
                     try context.save()
                 } catch _ {
-                    print("ruh roh")
+                    print("Error saving Member details.")
                 }
             }
             else if addSegue == false {
@@ -97,6 +113,30 @@ class MemberInfoVC: UIViewController {
         
         
     }
+    
+    @IBAction func pickProfilePicture(sender: AnyObject) {
+        var photoPicker = UIImagePickerController ()
+        photoPicker.delegate = self
+        photoPicker.sourceType = .PhotoLibrary
+        // display image selection view
+        self.presentViewController(photoPicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!){
+        self.dismissViewControllerAnimated(true, completion: { () -> Void in
+            
+        })
+        imgBox.image = image
+        
+    }
+
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        view.endEditing(true)
+        self.mainView.resignFirstResponder()
+        
+    }
+
     
     
 }
