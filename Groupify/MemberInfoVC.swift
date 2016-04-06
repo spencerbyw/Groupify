@@ -24,6 +24,9 @@ class MemberInfoVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
     var selectedMember: Member?
     var addSegue: Bool = false
     var context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    var desiredDate: NSDate!
+    var desiredAddress: String = ""
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,12 +50,26 @@ class MemberInfoVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
             let temp_img_data = selectedMember!.profile_picture! as NSData
             imgBox.image = UIImage(data: temp_img_data, scale: 1.0)
         }
+        
+        desiredDate = selectedMember!.meeting_availability_start
+        desiredAddress = selectedMember!.preferred_meeting_location!
     }
     
     @IBAction func saveMemberInfo(sender: AnyObject) {
         // If a field is empty display an alert
-        if (nameField.text!.isEmpty || phoneField.text!.isEmpty || emailField.text!.isEmpty || groupName.text!.isEmpty || groupNumber.text!.isEmpty || addressField.text!.isEmpty) {
+        if (nameField.text!.isEmpty
+            || phoneField.text!.isEmpty
+            || emailField.text!.isEmpty
+            || groupName.text!.isEmpty
+            || groupNumber.text!.isEmpty
+            || addressField.text!.isEmpty)
+        {
             let alert = UIAlertController(title: "Error", message: "Please fill in all fields.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+        else if (desiredDate == nil || desiredAddress == "") {
+            let alert = UIAlertController(title: "Error", message: "Please pick a time and place that you would be able to meet.", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
         }
@@ -75,8 +92,8 @@ class MemberInfoVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
                     let new_img_data = UIImageJPEGRepresentation(new_img!, 1)
                     nItem.profile_picture = new_img_data
                 }
-
-                // STILL LACKING SELECTED MEETING TIME
+                nItem.preferred_meeting_location = desiredAddress
+                nItem.meeting_availability_start = desiredDate
                 
                 do {
                     try context.save()
@@ -99,8 +116,9 @@ class MemberInfoVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
                     let new_img = imgBox.image
                     let new_img_data = UIImageJPEGRepresentation(new_img!, 1)
                     nItem!.profile_picture = new_img_data
-                }                // STILL LACKING SELECTED MEETING TIME
-                
+                }
+                nItem!.preferred_meeting_location = desiredAddress
+                nItem!.meeting_availability_start = desiredDate
                 do {
                     try context.save()
                 } catch _ {
@@ -122,6 +140,10 @@ class MemberInfoVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
         self.presentViewController(photoPicker, animated: true, completion: nil)
     }
     
+    @IBAction func addMeetingAvailability(sender: AnyObject) {
+        
+    }
+    
     func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!){
         self.dismissViewControllerAnimated(true, completion: { () -> Void in
             
@@ -136,7 +158,28 @@ class MemberInfoVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
         self.mainView.resignFirstResponder()
         
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "toMA" {
+            if let viewController: MeetingAvailabilityVC = segue.destinationViewController as? MeetingAvailabilityVC {
+                if desiredDate != nil {
+                    viewController.tempDate = desiredDate
+                }
+                if desiredAddress != "" {
+                    viewController.tempAddress = desiredAddress
+                }
+                (segue.destinationViewController as! MeetingAvailabilityVC).delegate = self
+            }
+        }
+    }
 
     
     
+}
+
+extension MemberInfoVC: MeetingAvailabilityVCDelegate {
+    func updateData(data: (String, NSDate!)) {
+        desiredAddress = data.0
+        desiredDate = data.1
+    }
 }

@@ -21,6 +21,7 @@
 		303939411CB0348F0045762D /* Member+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3039393B1CB0348F0045762D /* Member+CoreDataProperties.swift */; };
 		303939421CB0348F0045762D /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3039393C1CB0348F0045762D /* Member.swift */; };
 		303939441CB0388E0045762D /* MemberInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303939431CB0388E0045762D /* MemberInfoVC.swift */; };
+		303939471CB4BBCD0045762D /* MeetingAvailabilityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303939461CB4BBCD0045762D /* MeetingAvailabilityVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		3039393B1CB0348F0045762D /* Member+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Member+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3039393C1CB0348F0045762D /* Member.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		303939431CB0388E0045762D /* MemberInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberInfoVC.swift; sourceTree = "<group>"; };
+		303939461CB4BBCD0045762D /* MeetingAvailabilityVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingAvailabilityVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,9 +76,8 @@
 			children = (
 				303939201CA4F3780045762D /* AppDelegate.swift */,
 				303939221CA4F3780045762D /* ViewController.swift */,
-				303939351CADFD600045762D /* ManageGroupsVC.swift */,
+				303939481CB4BC210045762D /* ViewControllers */,
 				303939241CA4F3780045762D /* Main.storyboard */,
-				303939431CB0388E0045762D /* MemberInfoVC.swift */,
 				303939451CB038B00045762D /* Models */,
 				3039392A1CA4F3780045762D /* Assets.xcassets */,
 				3039392C1CA4F3780045762D /* LaunchScreen.storyboard */,
@@ -97,6 +98,16 @@
 				3039393C1CB0348F0045762D /* Member.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		303939481CB4BC210045762D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				303939351CADFD600045762D /* ManageGroupsVC.swift */,
+				303939431CB0388E0045762D /* MemberInfoVC.swift */,
+				303939461CB4BBCD0045762D /* MeetingAvailabilityVC.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +192,7 @@
 				303939211CA4F3780045762D /* AppDelegate.swift in Sources */,
 				3039393F1CB0348F0045762D /* Group+CoreDataProperties.swift in Sources */,
 				303939421CB0348F0045762D /* Member.swift in Sources */,
+				303939471CB4BBCD0045762D /* MeetingAvailabilityVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

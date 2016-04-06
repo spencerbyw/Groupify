@@ -23,5 +23,6 @@ extension Member {
     @NSManaged var profile_picture: NSData?
     @NSManaged var meeting_availability_start: NSDate?
     @NSManaged var meeting_availability_end: NSDate?
+    @NSManaged var preferred_meeting_location: String?
 
 }

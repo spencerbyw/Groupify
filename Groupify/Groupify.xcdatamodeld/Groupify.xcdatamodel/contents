@@ -19,10 +19,11 @@
         <attribute name="meeting_availability_start" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="preferred_meeting_location" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="profile_picture" optional="YES" attributeType="Binary" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Member" positionX="-63" positionY="-18" width="128" height="180"/>
+        <element name="Member" positionX="-63" positionY="-18" width="128" height="195"/>
         <element name="Meeting" positionX="-54" positionY="-9" width="128" height="105"/>
         <element name="Group" positionX="-36" positionY="72" width="128" height="75"/>
     </elements>
