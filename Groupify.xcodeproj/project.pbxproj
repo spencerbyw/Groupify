@@ -13,6 +13,15 @@
 		303939291CA4F3780045762D /* Groupify.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 303939271CA4F3780045762D /* Groupify.xcdatamodeld */; };
 		3039392B1CA4F3780045762D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3039392A1CA4F3780045762D /* Assets.xcassets */; };
 		3039392E1CA4F3780045762D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3039392C1CA4F3780045762D /* LaunchScreen.storyboard */; };
+		303939361CADFD600045762D /* ManageGroupsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303939351CADFD600045762D /* ManageGroupsVC.swift */; };
+		3039393D1CB0348F0045762D /* Meeting+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303939371CB0348F0045762D /* Meeting+CoreDataProperties.swift */; };
+		3039393E1CB0348F0045762D /* Meeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303939381CB0348F0045762D /* Meeting.swift */; };
+		3039393F1CB0348F0045762D /* Group+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303939391CB0348F0045762D /* Group+CoreDataProperties.swift */; };
+		303939401CB0348F0045762D /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3039393A1CB0348F0045762D /* Group.swift */; };
+		303939411CB0348F0045762D /* Member+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3039393B1CB0348F0045762D /* Member+CoreDataProperties.swift */; };
+		303939421CB0348F0045762D /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3039393C1CB0348F0045762D /* Member.swift */; };
+		303939441CB0388E0045762D /* MemberInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303939431CB0388E0045762D /* MemberInfoVC.swift */; };
+		303939471CB4BBCD0045762D /* MeetingAvailabilityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303939461CB4BBCD0045762D /* MeetingAvailabilityVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +33,15 @@
 		3039392A1CA4F3780045762D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3039392D1CA4F3780045762D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3039392F1CA4F3780045762D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		303939351CADFD600045762D /* ManageGroupsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageGroupsVC.swift; sourceTree = "<group>"; };
+		303939371CB0348F0045762D /* Meeting+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Meeting+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		303939381CB0348F0045762D /* Meeting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meeting.swift; sourceTree = "<group>"; };
+		303939391CB0348F0045762D /* Group+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Group+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3039393A1CB0348F0045762D /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		3039393B1CB0348F0045762D /* Member+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Member+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3039393C1CB0348F0045762D /* Member.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
+		303939431CB0388E0045762D /* MemberInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberInfoVC.swift; sourceTree = "<group>"; };
+		303939461CB4BBCD0045762D /* MeetingAvailabilityVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingAvailabilityVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +76,38 @@
 			children = (
 				303939201CA4F3780045762D /* AppDelegate.swift */,
 				303939221CA4F3780045762D /* ViewController.swift */,
+				303939481CB4BC210045762D /* ViewControllers */,
 				303939241CA4F3780045762D /* Main.storyboard */,
+				303939451CB038B00045762D /* Models */,
 				3039392A1CA4F3780045762D /* Assets.xcassets */,
 				3039392C1CA4F3780045762D /* LaunchScreen.storyboard */,
 				3039392F1CA4F3780045762D /* Info.plist */,
 				303939271CA4F3780045762D /* Groupify.xcdatamodeld */,
 			);
 			path = Groupify;
+			sourceTree = "<group>";
+		};
+		303939451CB038B00045762D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				303939371CB0348F0045762D /* Meeting+CoreDataProperties.swift */,
+				303939381CB0348F0045762D /* Meeting.swift */,
+				303939391CB0348F0045762D /* Group+CoreDataProperties.swift */,
+				3039393A1CB0348F0045762D /* Group.swift */,
+				3039393B1CB0348F0045762D /* Member+CoreDataProperties.swift */,
+				3039393C1CB0348F0045762D /* Member.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		303939481CB4BC210045762D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				303939351CADFD600045762D /* ManageGroupsVC.swift */,
+				303939431CB0388E0045762D /* MemberInfoVC.swift */,
+				303939461CB4BBCD0045762D /* MeetingAvailabilityVC.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +182,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				303939231CA4F3780045762D /* ViewController.swift in Sources */,
+				3039393E1CB0348F0045762D /* Meeting.swift in Sources */,
+				303939361CADFD600045762D /* ManageGroupsVC.swift in Sources */,
+				303939401CB0348F0045762D /* Group.swift in Sources */,
 				303939291CA4F3780045762D /* Groupify.xcdatamodeld in Sources */,
+				3039393D1CB0348F0045762D /* Meeting+CoreDataProperties.swift in Sources */,
+				303939411CB0348F0045762D /* Member+CoreDataProperties.swift in Sources */,
+				303939441CB0388E0045762D /* MemberInfoVC.swift in Sources */,
 				303939211CA4F3780045762D /* AppDelegate.swift in Sources */,
+				3039393F1CB0348F0045762D /* Group+CoreDataProperties.swift in Sources */,
+				303939421CB0348F0045762D /* Member.swift in Sources */,
+				303939471CB4BBCD0045762D /* MeetingAvailabilityVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +342,7 @@
 				303939341CA4F3780045762D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
