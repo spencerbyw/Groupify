@@ -22,6 +22,7 @@ class MemberInfoVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
     
     
     var selectedMember: Member?
+    var selectedGroup: Group?
     var addSegue: Bool = false
     var context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     var desiredDate: NSDate!
@@ -81,6 +82,8 @@ class MemberInfoVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
                 let ent = NSEntityDescription.entityForName("Member", inManagedObjectContext: context)
                 let nItem = Member(entity: ent!, insertIntoManagedObjectContext: context)
                 
+                  let nItem2 = Group(entity: ent!, insertIntoManagedObjectContext: context)
+                
                 nItem.name = nameField.text
                 nItem.phone = phoneField.text
                 nItem.email = emailField.text
@@ -105,6 +108,7 @@ class MemberInfoVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
                 // Update item in DB
                 let context = self.context
                 var nItem = selectedMember
+                var nItem2 = selectedGroup
                 
                 nItem!.name = nameField.text
                 nItem!.phone = phoneField.text
@@ -112,6 +116,10 @@ class MemberInfoVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
                 nItem!.group_name = groupName.text
                 nItem!.group_number = groupNumber.text
                 nItem!.address = addressField.text
+                
+                nItem2!.name = groupName.text
+                nItem2!.id = groupNumber.text
+                
                 if (imgBox.image != nil) {
                     let new_img = imgBox.image
                     let new_img_data = UIImageJPEGRepresentation(new_img!, 1)
