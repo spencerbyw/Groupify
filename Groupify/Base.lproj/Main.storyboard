@@ -99,28 +99,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zGn-IU-Hbf">
-                                <rect key="frame" x="0.0" y="199" width="320" height="369"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="45" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zGn-IU-Hbf">
+                                <rect key="frame" x="0.0" y="160" width="320" height="408"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="408" id="hAW-oL-BD6"/>
+                                </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" id="2p4-tY-WXP">
-                                        <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" rowHeight="45" id="2p4-tY-WXP">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2p4-tY-WXP" id="8gU-at-jNe">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="44.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="6K8-0U-5MI" kind="push" id="WKT-Ti-x0e"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Select a group from the table, and Groupify will suggest a day and time, and place, when the most members are available. " textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bRB-9p-TXc">
-                                <rect key="frame" x="40" y="90" width="240" height="83"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JJB-aZ-J4P">
+                                <rect key="frame" x="0.0" y="64" width="320" height="94"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Select a group from the table, and Groupify will suggest a day and time, and place, when the most members are available. " textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bRB-9p-TXc">
+                                        <rect key="frame" x="40" y="8" width="240" height="79"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.40000000600000002" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="bRB-9p-TXc" firstAttribute="leading" secondItem="JJB-aZ-J4P" secondAttribute="leading" constant="40" id="P3p-3z-lew"/>
+                                    <constraint firstItem="bRB-9p-TXc" firstAttribute="centerX" secondItem="JJB-aZ-J4P" secondAttribute="centerX" id="cpc-FB-LGW"/>
+                                    <constraint firstItem="bRB-9p-TXc" firstAttribute="centerY" secondItem="JJB-aZ-J4P" secondAttribute="centerY" id="hrN-Tj-cc8"/>
+                                    <constraint firstItem="bRB-9p-TXc" firstAttribute="top" secondItem="JJB-aZ-J4P" secondAttribute="topMargin" id="vmZ-SS-Fab"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zGn-IU-Hbf" firstAttribute="top" secondItem="JJB-aZ-J4P" secondAttribute="bottom" constant="2" id="3hw-AH-Czd"/>
+                            <constraint firstItem="zGn-IU-Hbf" firstAttribute="leading" secondItem="JJB-aZ-J4P" secondAttribute="leading" id="7uC-4l-vmV"/>
+                            <constraint firstItem="JJB-aZ-J4P" firstAttribute="leading" secondItem="9qe-U4-Ky1" secondAttribute="leading" id="RHO-fU-DyK"/>
+                            <constraint firstItem="JJB-aZ-J4P" firstAttribute="top" secondItem="mtr-Fp-Q4C" secondAttribute="bottom" id="f4y-Fk-0Hl"/>
+                            <constraint firstItem="zGn-IU-Hbf" firstAttribute="bottom" secondItem="PTI-j7-AhF" secondAttribute="top" id="lg8-7d-x7i"/>
+                            <constraint firstItem="zGn-IU-Hbf" firstAttribute="trailing" secondItem="JJB-aZ-J4P" secondAttribute="trailing" id="sl5-2p-NVb"/>
+                            <constraint firstAttribute="trailing" secondItem="zGn-IU-Hbf" secondAttribute="trailing" id="tsV-ht-GcA"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Schedule A Meeting" id="La1-Ay-N06"/>
                     <connections>
@@ -150,15 +177,15 @@
                                     <segue destination="vjY-qR-xvz" kind="push" id="0wu-KS-4Sx"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vEE-9J-GrK">
-                                <rect key="frame" x="0.0" y="134" width="320" height="434"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vEE-9J-GrK">
+                                <rect key="frame" x="0.0" y="148" width="320" height="420"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="Zfe-Ap-nve">
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zfe-Ap-nve" id="a8d-1c-rcx">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -167,12 +194,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="YDJ-RN-1Sh" firstAttribute="top" secondItem="qjx-4V-n6g" secondAttribute="bottom" constant="49" id="47P-Jj-4CU"/>
-                            <constraint firstItem="YDJ-RN-1Sh" firstAttribute="centerX" secondItem="vEE-9J-GrK" secondAttribute="centerX" id="IMP-bi-WLK"/>
-                            <constraint firstAttribute="trailing" secondItem="vEE-9J-GrK" secondAttribute="trailing" id="KIU-mx-wq4"/>
-                            <constraint firstItem="vEE-9J-GrK" firstAttribute="top" secondItem="qjx-4V-n6g" secondAttribute="bottom" constant="70" id="mDh-gb-429"/>
-                            <constraint firstItem="vEE-9J-GrK" firstAttribute="leading" secondItem="7Xk-ar-5rZ" secondAttribute="leading" id="r4z-l3-ByB"/>
-                            <constraint firstItem="vEE-9J-GrK" firstAttribute="bottom" secondItem="4jT-qi-1I2" secondAttribute="top" id="wfI-eP-Bqm"/>
+                            <constraint firstItem="vEE-9J-GrK" firstAttribute="top" secondItem="YDJ-RN-1Sh" secondAttribute="bottom" constant="49" id="2u8-iK-a1h"/>
+                            <constraint firstItem="vEE-9J-GrK" firstAttribute="centerX" secondItem="YDJ-RN-1Sh" secondAttribute="centerX" id="9WB-5B-vrl"/>
+                            <constraint firstItem="vEE-9J-GrK" firstAttribute="bottom" secondItem="4jT-qi-1I2" secondAttribute="top" id="To9-er-2Xb"/>
+                            <constraint firstItem="vEE-9J-GrK" firstAttribute="leading" secondItem="7Xk-ar-5rZ" secondAttribute="leading" id="ema-U3-5iM"/>
+                            <constraint firstAttribute="trailing" secondItem="vEE-9J-GrK" secondAttribute="trailing" id="yM4-eT-Mqn"/>
+                            <constraint firstItem="YDJ-RN-1Sh" firstAttribute="top" secondItem="qjx-4V-n6g" secondAttribute="bottom" constant="5" id="ysc-5q-5hG"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="List of Suggested Meetings" id="NhC-3a-l9o"/>
@@ -193,7 +220,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lwJ-vz-Zda">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lwJ-vz-Zda">
                                 <rect key="frame" x="0.0" y="64" width="320" height="327"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hV-d6-wHf">
@@ -238,13 +265,13 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="John, Emily, Michael, Eric, Paul, Maria, Beth" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8hQ-O5-AK2">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="John, Emily, Michael, Eric, Paul, Maria, Beth" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8hQ-O5-AK2">
                                         <rect key="frame" x="45" y="171" width="234" height="85"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T2J-74-fgI">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T2J-74-fgI">
                                         <rect key="frame" x="71" y="275" width="179" height="30"/>
                                         <state key="normal" title="Click to Schedule Meeting"/>
                                         <connections>

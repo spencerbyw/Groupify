@@ -80,15 +80,21 @@ class MemberInfoVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
                 // Save new item to DB
                 let context = self.context
                 let ent = NSEntityDescription.entityForName("Member", inManagedObjectContext: context)
+                let ent2 = NSEntityDescription.entityForName("Group", inManagedObjectContext: context)
+
                 let nItem = Member(entity: ent!, insertIntoManagedObjectContext: context)
                 
-                  let nItem2 = Group(entity: ent!, insertIntoManagedObjectContext: context)
+                  let nItem2 = Group(entity: ent2!, insertIntoManagedObjectContext: context)
                 
                 nItem.name = nameField.text
                 nItem.phone = phoneField.text
                 nItem.email = emailField.text
                 nItem.group_name = groupName.text
                 nItem.group_number = groupNumber.text
+                
+                nItem2.name = groupName.text
+                nItem2.id = groupNumber.text
+                
                 nItem.address = addressField.text
                 if (imgBox.image != nil) {
                     let new_img = imgBox.image
