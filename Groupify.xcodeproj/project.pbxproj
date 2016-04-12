@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01DC05F51CBD90B5000970AE /* ScheduleAMeetingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DC05F41CBD90B5000970AE /* ScheduleAMeetingVC.swift */; };
 		303939211CA4F3780045762D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303939201CA4F3780045762D /* AppDelegate.swift */; };
 		303939231CA4F3780045762D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303939221CA4F3780045762D /* ViewController.swift */; };
 		303939261CA4F3780045762D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 303939241CA4F3780045762D /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01DC05F41CBD90B5000970AE /* ScheduleAMeetingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleAMeetingVC.swift; sourceTree = "<group>"; };
 		3039391D1CA4F3780045762D /* Groupify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Groupify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		303939201CA4F3780045762D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		303939221CA4F3780045762D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				303939351CADFD600045762D /* ManageGroupsVC.swift */,
 				303939431CB0388E0045762D /* MemberInfoVC.swift */,
 				303939461CB4BBCD0045762D /* MeetingAvailabilityVC.swift */,
+				01DC05F41CBD90B5000970AE /* ScheduleAMeetingVC.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				303939231CA4F3780045762D /* ViewController.swift in Sources */,
+				01DC05F51CBD90B5000970AE /* ScheduleAMeetingVC.swift in Sources */,
 				3039393E1CB0348F0045762D /* Meeting.swift in Sources */,
 				303939361CADFD600045762D /* ManageGroupsVC.swift in Sources */,
 				303939401CB0348F0045762D /* Group.swift in Sources */,
