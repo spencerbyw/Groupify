@@ -120,6 +120,16 @@ class ScheduleAMeetingVC: UIViewController, NSFetchedResultsControllerDelegate,U
         }
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "meetingSegue" {
+            if let viewController: ListOfMeetingsVC = segue.destinationViewController as? ListOfMeetingsVC {
+                let selectedIndex: NSIndexPath = self.groupTable.indexPathForCell(sender as! UITableViewCell)!
+                let group = dataViewController.fetchedObjects![selectedIndex.row]
+                viewController.selectedGroup = group as? Group;                
+            }
+        }
+    }
+    
 
 }
 
