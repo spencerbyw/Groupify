@@ -15,14 +15,21 @@ class ScheduleMeetingDetailsVC: UIViewController {
     var members_available: String?
     var locations_available: String?
     
+    @IBOutlet weak var groupNameLabel: UILabel!
+    @IBOutlet weak var metingDateTimeLabel: UILabel!
+    @IBOutlet weak var availableMemberBox: UITextView!
+    @IBOutlet weak var locationsBox: UITextView!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print(groupName)
-        print(date_time)
-        print(members_available)
-        print(locations_available)
-
+        groupNameLabel.text = groupName
+        metingDateTimeLabel.text = date_time
+        availableMemberBox.text = members_available
+        locationsBox.text = locations_available
+        
         // Do any additional setup after loading the view.
     }
 
