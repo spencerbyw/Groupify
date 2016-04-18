@@ -16,7 +16,8 @@ class ListOfMeetingsVC: UIViewController, UITableViewDelegate, UITableViewDataSo
     var context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     var groupMembers = [String]()
     var members: [Member]?
-//    var timesAvailable: [Member]?
+    var timesAvailable = [String]()
+
     @IBOutlet weak var meetings_table: UITableView!
     
     
@@ -32,12 +33,30 @@ class ListOfMeetingsVC: UIViewController, UITableViewDelegate, UITableViewDataSo
         } catch {
             print("Error")
         }
-//
-//        for each in members! {
-////            timesAvailable.append(each.meeting_availability_start)
-//
-//            
-//        }
+        
+        var namesDic = [String:String]()
+        var placeDic = [String:String]()
+
+        
+        
+        for each in members! {
+            
+            let formatter = NSDateFormatter()
+            formatter.dateStyle = NSDateFormatterStyle.LongStyle
+            formatter.timeStyle = .ShortStyle
+            let time_available = String(formatter.stringFromDate(each.meeting_availability_start!))
+            
+            if !timesAvailable.contains(time_available) {
+                timesAvailable.append(time_available)
+                namesDic[String(time_available)] = each.name
+                placeDic[String(time_available)] = each.preferred_meeting_location
+                
+            } else {
+                //else add the name to the list of members available
+                namesDic[String(time_available)] = namesDic[String(time_available)]! + " , " + each.name!
+                placeDic[String(time_available)] = namesDic[String(time_available)]! + " , " + each.preferred_meeting_location!
+            }
+        }
         
     }
 
@@ -51,13 +70,12 @@ class ListOfMeetingsVC: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return members!.count
+        return timesAvailable.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell2 = tableView.dequeueReusableCellWithIdentifier("cell2", forIndexPath: indexPath) as UITableViewCell
-        
-        cell2.textLabel?.text = String(members![indexPath.row].meeting_availability_start!)
+        cell2.textLabel?.text = timesAvailable[indexPath.row]
         return cell2
     }
 
