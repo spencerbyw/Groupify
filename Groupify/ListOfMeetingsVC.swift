@@ -17,6 +17,9 @@ class ListOfMeetingsVC: UIViewController, UITableViewDelegate, UITableViewDataSo
     var groupMembers = [String]()
     var members: [Member]?
     var timesAvailable = [String]()
+    
+    var namesDic = [String:String]()
+    var placeDic = [String:String]()
 
     @IBOutlet weak var meetings_table: UITableView!
     
@@ -34,8 +37,6 @@ class ListOfMeetingsVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             print("Error")
         }
         
-        var namesDic = [String:String]()
-        var placeDic = [String:String]()
 
         
         
@@ -54,7 +55,7 @@ class ListOfMeetingsVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             } else {
                 //else add the name to the list of members available
                 namesDic[String(time_available)] = namesDic[String(time_available)]! + " , " + each.name!
-                placeDic[String(time_available)] = namesDic[String(time_available)]! + " , " + each.preferred_meeting_location!
+                placeDic[String(time_available)] = placeDic[String(time_available)]! + " , " + each.preferred_meeting_location!
             }
         }
         
@@ -78,5 +79,19 @@ class ListOfMeetingsVC: UIViewController, UITableViewDelegate, UITableViewDataSo
         cell2.textLabel?.text = timesAvailable[indexPath.row]
         return cell2
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "meeting_details" {
+            if let viewController: ScheduleMeetingDetailsVC = segue.destinationViewController as? ScheduleMeetingDetailsVC {
+                let selectedIndex: NSIndexPath = self.meetings_table.indexPathForCell(sender as! UITableViewCell)!
+                
+                viewController.date_time = timesAvailable[selectedIndex.row]
+                viewController.groupName = selectedGroup?.name
+                viewController.locations_available = placeDic[timesAvailable[selectedIndex.row]]
+                viewController.members_available = namesDic[timesAvailable[selectedIndex.row]]
+            }
+        }
+    }
+
 
 }

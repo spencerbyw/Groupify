@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		015195D51CC4857D0010DA00 /* ScheduleMeetingDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015195D41CC4857D0010DA00 /* ScheduleMeetingDetailsVC.swift */; };
 		0167C2031CBDC576007E6274 /* ListOfMeetingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0167C2021CBDC576007E6274 /* ListOfMeetingsVC.swift */; };
 		01DC05F51CBD90B5000970AE /* ScheduleAMeetingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DC05F41CBD90B5000970AE /* ScheduleAMeetingVC.swift */; };
 		303939211CA4F3780045762D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303939201CA4F3780045762D /* AppDelegate.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		015195D41CC4857D0010DA00 /* ScheduleMeetingDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleMeetingDetailsVC.swift; sourceTree = "<group>"; };
 		0167C2021CBDC576007E6274 /* ListOfMeetingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOfMeetingsVC.swift; sourceTree = "<group>"; };
 		01DC05F41CBD90B5000970AE /* ScheduleAMeetingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleAMeetingVC.swift; sourceTree = "<group>"; };
 		3039391D1CA4F3780045762D /* Groupify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Groupify.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				303939351CADFD600045762D /* ManageGroupsVC.swift */,
+				015195D41CC4857D0010DA00 /* ScheduleMeetingDetailsVC.swift */,
 				303939431CB0388E0045762D /* MemberInfoVC.swift */,
 				303939461CB4BBCD0045762D /* MeetingAvailabilityVC.swift */,
 				01DC05F41CBD90B5000970AE /* ScheduleAMeetingVC.swift */,
@@ -188,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				303939231CA4F3780045762D /* ViewController.swift in Sources */,
+				015195D51CC4857D0010DA00 /* ScheduleMeetingDetailsVC.swift in Sources */,
 				01DC05F51CBD90B5000970AE /* ScheduleAMeetingVC.swift in Sources */,
 				3039393E1CB0348F0045762D /* Meeting.swift in Sources */,
 				303939361CADFD600045762D /* ManageGroupsVC.swift in Sources */,
