@@ -144,7 +144,7 @@ class MemberInfoVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
                     nItem!.profile_picture = new_img_data
                 }
                 nItem!.preferred_meeting_location = desiredAddress
-                nItem!.meeting_availability_start = desiredDate
+                nItem!.meeting_availability_start = stripSecondsFromDate(desiredDate)
                 do {
                     try context.save()
                 } catch _ {
@@ -155,7 +155,15 @@ class MemberInfoVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
         }
         
         
+    }
+    
+    func stripSecondsFromDate(date: NSDate) -> NSDate {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        let str = dateFormatter.stringFromDate(date)
+        let newDate = dateFormatter.dateFromString(str)!
         
+        return newDate
     }
     
     @IBAction func pickProfilePicture(sender: AnyObject) {
