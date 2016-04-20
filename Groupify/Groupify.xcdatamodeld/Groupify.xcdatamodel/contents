@@ -5,10 +5,10 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Meeting" representedClassName=".Meeting" syncable="YES">
-        <attribute name="end_time" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="place" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="start_time" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="time" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="date_time" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="group_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="members_available" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="places" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Member" representedClassName=".Member" syncable="YES">
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>

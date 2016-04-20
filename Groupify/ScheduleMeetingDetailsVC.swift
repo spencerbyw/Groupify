@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Foundation
 
 class ScheduleMeetingDetailsVC: UIViewController {
     
@@ -24,18 +25,26 @@ class ScheduleMeetingDetailsVC: UIViewController {
     @IBOutlet weak var availableMemberBox: UITextView!
     @IBOutlet weak var locationsBox: UITextView!
     
-    
-    @IBAction func Schedule_Meeting_button(sender: AnyObject) {
-        let context = self.context
-        let ent = NSEntityDescription.entityForName("Meeting", inManagedObjectContext: context)
+    @IBAction func Schedule_Meeting(sender: AnyObject) {
+                let context = self.context
+                let ent = NSEntityDescription.entityForName("Meeting", inManagedObjectContext: context)
         
-        let nItem = Meeting(entity: ent!, insertIntoManagedObjectContext: context)
-        
+                let nItem = Meeting(entity: ent!, insertIntoManagedObjectContext: context)
         
         
+                nItem.date_time = date_time
+                nItem.group_name = groupName
+                nItem.members_available = members_available
+                nItem.places = locations_available
         
+                do {
+                    try context.save()
+                } catch _ {
+                    print("Error saving Member details.")
+                }
 
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +53,6 @@ class ScheduleMeetingDetailsVC: UIViewController {
         metingDateTimeLabel.text = date_time
         availableMemberBox.text = members_available
         locationsBox.text = locations_available
-        
         // Do any additional setup after loading the view.
     }
 

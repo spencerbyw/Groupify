@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		015195D51CC4857D0010DA00 /* ScheduleMeetingDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015195D41CC4857D0010DA00 /* ScheduleMeetingDetailsVC.swift */; };
 		0167C2031CBDC576007E6274 /* ListOfMeetingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0167C2021CBDC576007E6274 /* ListOfMeetingsVC.swift */; };
+		0182AC281CC742F700A30A1F /* SavedMeetingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0182AC271CC742F700A30A1F /* SavedMeetingsVC.swift */; };
 		01DC05F51CBD90B5000970AE /* ScheduleAMeetingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DC05F41CBD90B5000970AE /* ScheduleAMeetingVC.swift */; };
 		303939211CA4F3780045762D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303939201CA4F3780045762D /* AppDelegate.swift */; };
 		303939231CA4F3780045762D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303939221CA4F3780045762D /* ViewController.swift */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		015195D41CC4857D0010DA00 /* ScheduleMeetingDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleMeetingDetailsVC.swift; sourceTree = "<group>"; };
 		0167C2021CBDC576007E6274 /* ListOfMeetingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOfMeetingsVC.swift; sourceTree = "<group>"; };
+		0182AC271CC742F700A30A1F /* SavedMeetingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedMeetingsVC.swift; sourceTree = "<group>"; };
 		01DC05F41CBD90B5000970AE /* ScheduleAMeetingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleAMeetingVC.swift; sourceTree = "<group>"; };
 		3039391D1CA4F3780045762D /* Groupify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Groupify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		303939201CA4F3780045762D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				303939351CADFD600045762D /* ManageGroupsVC.swift */,
 				015195D41CC4857D0010DA00 /* ScheduleMeetingDetailsVC.swift */,
 				303939431CB0388E0045762D /* MemberInfoVC.swift */,
+				0182AC271CC742F700A30A1F /* SavedMeetingsVC.swift */,
 				303939461CB4BBCD0045762D /* MeetingAvailabilityVC.swift */,
 				01DC05F41CBD90B5000970AE /* ScheduleAMeetingVC.swift */,
 				0167C2021CBDC576007E6274 /* ListOfMeetingsVC.swift */,
@@ -198,6 +201,7 @@
 				303939401CB0348F0045762D /* Group.swift in Sources */,
 				0167C2031CBDC576007E6274 /* ListOfMeetingsVC.swift in Sources */,
 				303939291CA4F3780045762D /* Groupify.xcdatamodeld in Sources */,
+				0182AC281CC742F700A30A1F /* SavedMeetingsVC.swift in Sources */,
 				3039393D1CB0348F0045762D /* Meeting+CoreDataProperties.swift in Sources */,
 				303939411CB0348F0045762D /* Member+CoreDataProperties.swift in Sources */,
 				303939441CB0388E0045762D /* MemberInfoVC.swift in Sources */,
