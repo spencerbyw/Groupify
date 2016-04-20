@@ -259,6 +259,7 @@
                                         <state key="normal" title="Click to Schedule Meeting"/>
                                         <connections>
                                             <action selector="Schedule_Meeting:" destination="vjY-qR-xvz" eventType="touchUpInside" id="fzl-w1-Akf"/>
+                                            <segue destination="BYZ-38-t0r" kind="push" id="GgZ-lV-hHw"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Meeting:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ift-Ge-TMr">
@@ -304,7 +305,7 @@
                                 <rect key="frame" x="0.0" y="174" width="320" height="394"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="XFN-bq-RIl">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" id="XFN-bq-RIl">
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XFN-bq-RIl" id="rE6-eb-kKd">
@@ -316,6 +317,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="IXM-Lh-ZIn" id="YD4-JL-iOv"/>
+                                    <outlet property="delegate" destination="IXM-Lh-ZIn" id="r82-ro-z5Y"/>
+                                </connections>
                             </tableView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Click on a scheduled meeting to find directions and information about the place you are meeting." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1LR-g5-Amu">
                                 <rect key="frame" x="40" y="28" width="240" height="73"/>
@@ -348,6 +353,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="List of Meetings" id="HQF-XS-6CN"/>
+                    <connections>
+                        <outlet property="tableView" destination="8We-GD-zzS" id="enf-21-TOV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LP7-KN-BNa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -883,8 +891,9 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="ZV7-Zf-Cfa"/>
-        <segue reference="TdO-r2-mOh"/>
+        <segue reference="GgZ-lV-hHw"/>
         <segue reference="7hE-8G-fL7"/>
+        <segue reference="TdO-r2-mOh"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>
