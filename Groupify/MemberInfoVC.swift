@@ -22,11 +22,11 @@ class MemberInfoVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
     
     
     var selectedMember: Member?
+    var selectedGroup: Group?
     var addSegue: Bool = false
     var context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     var desiredDate: NSDate!
     var desiredAddress: String = ""
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,6 +79,8 @@ class MemberInfoVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
                 // Save new item to DB
                 let context = self.context
                 let ent = NSEntityDescription.entityForName("Member", inManagedObjectContext: context)
+                let ent2 = NSEntityDescription.entityForName("Group", inManagedObjectContext: context)
+
                 let nItem = Member(entity: ent!, insertIntoManagedObjectContext: context)
                 
                 nItem.name = nameField.text
@@ -86,6 +88,26 @@ class MemberInfoVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
                 nItem.email = emailField.text
                 nItem.group_name = groupName.text
                 nItem.group_number = groupNumber.text
+                
+                
+                let fetchRequest = NSFetchRequest(entityName: "Group")
+                let predicate = NSPredicate(format: "name == %@", groupName.text!)
+                fetchRequest.predicate = predicate
+                
+                do {
+                let fetchResults = try self.context.executeFetchRequest(fetchRequest) as? [Group]
+                    if fetchResults!.count != 0 {
+                    } else if fetchResults!.count == 0 {
+                        let nItem2 = Group(entity: ent2!, insertIntoManagedObjectContext: context)
+                        nItem2.name = groupName.text
+                        nItem2.id = groupNumber.text
+                    }
+                } catch {
+                    print("Error")
+                }
+                
+            
+                
                 nItem.address = addressField.text
                 if (imgBox.image != nil) {
                     let new_img = imgBox.image
@@ -112,6 +134,9 @@ class MemberInfoVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
                 nItem!.group_name = groupName.text
                 nItem!.group_number = groupNumber.text
                 nItem!.address = addressField.text
+                
+
+                
                 if (imgBox.image != nil) {
                     let new_img = imgBox.image
                     let new_img_data = UIImageJPEGRepresentation(new_img!, 1)
@@ -127,7 +152,6 @@ class MemberInfoVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
             }
             navigationController!.popViewControllerAnimated(true)
         }
-        
         
         
     }

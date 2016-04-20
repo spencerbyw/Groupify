@@ -14,9 +14,9 @@ import CoreData
 
 extension Meeting {
 
-    @NSManaged var time: NSDate?
-    @NSManaged var place: String?
-    @NSManaged var start_time: NSDate?
-    @NSManaged var end_time: NSDate?
+    @NSManaged var date_time: String?
+    @NSManaged var group_name: String?
+    @NSManaged var members_available: String?
+    @NSManaged var places: String?
 
 }
