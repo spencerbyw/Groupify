@@ -45,7 +45,9 @@ class ListOfMeetingsVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             let formatter = NSDateFormatter()
             formatter.dateStyle = NSDateFormatterStyle.LongStyle
             formatter.timeStyle = .ShortStyle
+            print(each.meeting_availability_start)
             let time_available = String(formatter.stringFromDate(each.meeting_availability_start!))
+            print(time_available)
             
             if !timesAvailable.contains(time_available) {
                 timesAvailable.append(time_available)
@@ -55,7 +57,7 @@ class ListOfMeetingsVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             } else {
                 //else add the name to the list of members available
                 namesDic[String(time_available)] = namesDic[String(time_available)]! + " , " + each.name!
-                placeDic[String(time_available)] = placeDic[String(time_available)]! + " , " + each.preferred_meeting_location!
+                placeDic[String(time_available)] = placeDic[String(time_available)]! + " : " + each.preferred_meeting_location!
             }
         }
         

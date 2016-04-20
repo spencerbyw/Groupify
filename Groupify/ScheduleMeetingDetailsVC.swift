@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ScheduleMeetingDetailsVC: UIViewController {
     
@@ -15,12 +16,26 @@ class ScheduleMeetingDetailsVC: UIViewController {
     var members_available: String?
     var locations_available: String?
     
+    var context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+
+    
     @IBOutlet weak var groupNameLabel: UILabel!
     @IBOutlet weak var metingDateTimeLabel: UILabel!
     @IBOutlet weak var availableMemberBox: UITextView!
     @IBOutlet weak var locationsBox: UITextView!
     
     
+    @IBAction func Schedule_Meeting_button(sender: AnyObject) {
+        let context = self.context
+        let ent = NSEntityDescription.entityForName("Meeting", inManagedObjectContext: context)
+        
+        let nItem = Meeting(entity: ent!, insertIntoManagedObjectContext: context)
+        
+        
+        
+        
+
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
