@@ -20,6 +20,8 @@ class ListOfMeetingsVC: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     var namesDic = [String:String]()
     var placeDic = [String:String]()
+    var places_arr = [String]()
+    var places_set = Set<String>()
 
     @IBOutlet weak var meetings_table: UITableView!
     
@@ -45,19 +47,22 @@ class ListOfMeetingsVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             let formatter = NSDateFormatter()
             formatter.dateStyle = NSDateFormatterStyle.LongStyle
             formatter.timeStyle = .ShortStyle
-            print(each.meeting_availability_start)
+//            print(each.meeting_availability_start)
             let time_available = String(formatter.stringFromDate(each.meeting_availability_start!))
-            print(time_available)
+//            print(time_available)
             
             if !timesAvailable.contains(time_available) {
                 timesAvailable.append(time_available)
                 namesDic[String(time_available)] = each.name
                 placeDic[String(time_available)] = each.preferred_meeting_location
-                
+                places_set.insert(each.preferred_meeting_location!)
+//                places_arr.append(each.preferred_meeting_location!)
             } else {
                 //else add the name to the list of members available
                 namesDic[String(time_available)] = namesDic[String(time_available)]! + " , " + each.name!
                 placeDic[String(time_available)] = placeDic[String(time_available)]! + " : " + each.preferred_meeting_location!
+//                places_arr.append(each.preferred_meeting_location!)
+                places_set.insert(each.preferred_meeting_location!)
             }
         }
         
@@ -91,6 +96,7 @@ class ListOfMeetingsVC: UIViewController, UITableViewDelegate, UITableViewDataSo
                 viewController.groupName = selectedGroup?.name
                 viewController.locations_available = placeDic[timesAvailable[selectedIndex.row]]
                 viewController.members_available = namesDic[timesAvailable[selectedIndex.row]]
+                viewController.place_list = Array(places_set)
             }
         }
     }
