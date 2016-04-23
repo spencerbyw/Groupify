@@ -59,6 +59,10 @@ class SavedMeetingsVC: UIViewController, NSFetchedResultsControllerDelegate, UIT
         return dataViewController.fetchedObjects!.count
     }
     
+    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+        self.tableView.reloadData()
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
         let meetingInfo = dataViewController.objectAtIndexPath(indexPath) as! Meeting
