@@ -19,6 +19,7 @@ class ScheduleMeetingDetailsVC: UIViewController, UIPickerViewDataSource, UIPick
     var locations_available: String?
     var place_list: [String]?
     var selected_place: String?
+    var real_date: NSDate?
     
     var context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
 
@@ -40,6 +41,7 @@ class ScheduleMeetingDetailsVC: UIViewController, UIPickerViewDataSource, UIPick
                 nItem.group_name = groupName
                 nItem.members_available = members_available
                 nItem.places = selected_place
+                nItem.real_date = real_date
         
                 do {
                     try context.save()
@@ -54,6 +56,7 @@ class ScheduleMeetingDetailsVC: UIViewController, UIPickerViewDataSource, UIPick
         super.viewDidLoad()
         if !(place_list?.isEmpty)! {
             place_list?.sortInPlace()
+            selected_place = place_list![0]
             getDirections(place_list![0])
         }
         placePicker.dataSource = self

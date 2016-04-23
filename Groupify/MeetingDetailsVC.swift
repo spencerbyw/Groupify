@@ -16,6 +16,7 @@ class MeetingDetailsVC: UIViewController {
     var lat:String = ""
     var lon:String = ""
     var coord:CLLocationCoordinate2D?
+    var fmt_date:String = ""
     
     @IBOutlet weak var groupNameLabel: UILabel!
     @IBOutlet weak var mtgDateLabel: UILabel!
@@ -26,8 +27,10 @@ class MeetingDetailsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(mtg!.places)
-//        print(mtg!.members_available)
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        fmt_date = formatter.stringFromDate(mtg!.real_date!)
+        print(fmt_date)
         
         groupNameLabel.text? = mtg!.group_name!
         mtgDateLabel.text? = mtg!.date_time!
@@ -109,20 +112,24 @@ class MeetingDetailsVC: UIViewController {
                 print("JSON Error \(err!.localizedDescription)")
             }
             
-            print(jsonResult)
-//            let earthquakes:NSArray = jsonResult["earthquakes"] as! NSArray
-//            var eqInfo = ""
-//            for earthquake in earthquakes {
-//                let eq:NSDictionary = earthquake as! NSDictionary
-//                eqInfo += "Magnitude: \(eq["magnitude"]!), "
-//                eqInfo += "Date: \(eq["datetime"]!), "
-//                eqInfo += "Depth: \(eq["depth"]!), "
-//                eqInfo += "Lat: \(eq["lat"]!), "
-//                eqInfo += "Lon: \(eq["lng"]!)\n"
-//                
-//            }
+//            print(jsonResult)
+            let weatherBoops:NSArray = jsonResult["list"] as! NSArray
+            var weatherText:String = ""
+            for boop in weatherBoops {
+                let dayWeather:NSDictionary = boop as! NSDictionary
+                let dt_txt = String(dayWeather["dt_txt"])
+                if dt_txt.containsString(self.fmt_date) && weatherText == "" {
+                    let dayWeather_weather:NSArray = dayWeather["weather"] as! NSArray
+                    var descr = dayWeather_weather[0]["description"] as! String!
+                    
+                    weatherText += descr + "\n"
+                    let temperatures:NSDictionary = dayWeather["main"] as! NSDictionary
+                    weatherText += "Low: " + String(temperatures["temp_min"]!) + "\n"
+                    weatherText += "High: " + String(temperatures["temp_max"]!) + "\n"
+                }
+            }
             dispatch_async(dispatch_get_main_queue(), {
-                self.weatherDetailsLabel.text = String(jsonResult)
+                self.weatherDetailsLabel.text = String(weatherText)
                 //                self.getDirections("China")
             })
         })
@@ -134,18 +141,7 @@ class MeetingDetailsVC: UIViewController {
         print(mtg!.places!)
         var originalString = mtg!.places!
         var escapedString = originalString.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())
-//        println("escapedString: \(escapedString)")
         UIApplication.sharedApplication().openURL(NSURL(string: "http://maps.apple.com/?q=\(escapedString!)")!)
-
-//        var pm = MKPlacemark(coordinate: coord!, addressDictionary: nil)
-//        var mapItem = MKMapItem(placemark: pm)
-//        
-//        mapItem.name = "\(self.lon), \(self.lat)"
-//        
-//        //You could also choose: MKLaunchOptionsDirectionsModeWalking
-//        var launchOptions = [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving]
-//        
-//        mapItem.openInMapsWithLaunchOptions(launchOptions)
     }
     
 }

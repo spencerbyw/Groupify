@@ -17,6 +17,7 @@ class ListOfMeetingsVC: UIViewController, UITableViewDelegate, UITableViewDataSo
     var groupMembers = [String]()
     var members: [Member]?
     var timesAvailable = [String]()
+    var dateTimesAvailable = [NSDate]()
     
     var namesDic = [String:String]()
     var placeDic = [String:String]()
@@ -51,6 +52,7 @@ class ListOfMeetingsVC: UIViewController, UITableViewDelegate, UITableViewDataSo
 //            print(time_available)
             
             if !timesAvailable.contains(time_available) {
+                dateTimesAvailable.append(each.meeting_availability_start!)
                 timesAvailable.append(time_available)
                 namesDic[String(time_available)] = each.name
                 placeDic[String(time_available)] = each.preferred_meeting_location
@@ -95,6 +97,7 @@ class ListOfMeetingsVC: UIViewController, UITableViewDelegate, UITableViewDataSo
                 viewController.groupName = selectedGroup?.name
                 viewController.locations_available = placeDic[timesAvailable[selectedIndex.row]]
                 viewController.members_available = namesDic[timesAvailable[selectedIndex.row]]
+                viewController.real_date = dateTimesAvailable[selectedIndex.row]
                 viewController.place_list = Array(places_set)
             }
         }
