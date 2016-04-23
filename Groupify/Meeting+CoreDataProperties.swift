@@ -18,5 +18,6 @@ extension Meeting {
     @NSManaged var group_name: String?
     @NSManaged var members_available: String?
     @NSManaged var places: String?
+    @NSManaged var real_date: NSDate?
 
 }

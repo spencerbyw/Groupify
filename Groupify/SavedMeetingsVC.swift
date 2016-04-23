@@ -59,6 +59,10 @@ class SavedMeetingsVC: UIViewController, NSFetchedResultsControllerDelegate, UIT
         return dataViewController.fetchedObjects!.count
     }
     
+    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+        self.tableView.reloadData()
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
         let meetingInfo = dataViewController.objectAtIndexPath(indexPath) as! Meeting
@@ -116,19 +120,20 @@ class SavedMeetingsVC: UIViewController, NSFetchedResultsControllerDelegate, UIT
             
         }
     }
-
     
-    
-    
-
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "toMeetingDetails" {
+            if let viewController: MeetingDetailsVC = segue.destinationViewController as? MeetingDetailsVC {
+                let selectedIndex: NSIndexPath = self.tableView.indexPathForCell(sender as! UITableViewCell)!
+                var temp_mtg: Meeting = self.dataViewController.fetchedObjects!.first as! Meeting
+//                print(temp_mtg.places)
+//                print(temp_mtg.date_time)
+                viewController.mtg = self.dataViewController.fetchedObjects![selectedIndex.row] as! Meeting
+            }
+        }
     }
-    */
 
 }
