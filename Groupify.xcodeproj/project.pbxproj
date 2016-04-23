@@ -26,6 +26,7 @@
 		303939421CB0348F0045762D /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3039393C1CB0348F0045762D /* Member.swift */; };
 		303939441CB0388E0045762D /* MemberInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303939431CB0388E0045762D /* MemberInfoVC.swift */; };
 		303939471CB4BBCD0045762D /* MeetingAvailabilityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303939461CB4BBCD0045762D /* MeetingAvailabilityVC.swift */; };
+		30E3FDDB1CCB11BA00288DBA /* MeetingDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E3FDDA1CCB11BA00288DBA /* MeetingDetailsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		3039393C1CB0348F0045762D /* Member.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		303939431CB0388E0045762D /* MemberInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberInfoVC.swift; sourceTree = "<group>"; };
 		303939461CB4BBCD0045762D /* MeetingAvailabilityVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingAvailabilityVC.swift; sourceTree = "<group>"; };
+		30E3FDDA1CCB11BA00288DBA /* MeetingDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingDetailsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				303939461CB4BBCD0045762D /* MeetingAvailabilityVC.swift */,
 				01DC05F41CBD90B5000970AE /* ScheduleAMeetingVC.swift */,
 				0167C2021CBDC576007E6274 /* ListOfMeetingsVC.swift */,
+				30E3FDDA1CCB11BA00288DBA /* MeetingDetailsVC.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				3039393F1CB0348F0045762D /* Group+CoreDataProperties.swift in Sources */,
 				303939421CB0348F0045762D /* Member.swift in Sources */,
 				303939471CB4BBCD0045762D /* MeetingAvailabilityVC.swift in Sources */,
+				30E3FDDB1CCB11BA00288DBA /* MeetingDetailsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
