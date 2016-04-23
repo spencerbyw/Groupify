@@ -36,8 +36,14 @@ class MeetingAvailabilityVC: UIViewController {
         super.didReceiveMemoryWarning()
     }
     @IBAction func doneClick(sender: AnyObject) {
+        var right_now: NSDate = NSDate()
         if meetingAddressField.text! == "" {
             let alert = UIAlertController(title: "Error", message: "Please fill in all fields.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+        else if right_now.compare(datePicker.date).rawValue > 0 {
+            let alert = UIAlertController(title: "Error", message: "Choose a meeting time that's not in the past.", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
         }

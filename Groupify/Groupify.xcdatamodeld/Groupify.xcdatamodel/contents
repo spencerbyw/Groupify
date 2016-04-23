@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="14F27" minimumToolsVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15D21" minimumToolsVersion="Automatic">
     <entity name="Group" representedClassName=".Group" syncable="YES">
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -9,6 +9,7 @@
         <attribute name="group_name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="members_available" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="places" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="real_date" optional="YES" attributeType="Date" syncable="YES"/>
     </entity>
     <entity name="Member" representedClassName=".Member" syncable="YES">
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
@@ -24,7 +25,7 @@
     </entity>
     <elements>
         <element name="Group" positionX="-36" positionY="72" width="128" height="75"/>
-        <element name="Meeting" positionX="-54" positionY="-9" width="128" height="105"/>
+        <element name="Meeting" positionX="-54" positionY="-9" width="128" height="120"/>
         <element name="Member" positionX="-63" positionY="-18" width="128" height="195"/>
     </elements>
 </model>
