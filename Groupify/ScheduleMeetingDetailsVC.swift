@@ -53,6 +53,7 @@ class ScheduleMeetingDetailsVC: UIViewController, UIPickerViewDataSource, UIPick
     override func viewDidLoad() {
         super.viewDidLoad()
         if !(place_list?.isEmpty)! {
+            place_list?.sortInPlace()
             getDirections(place_list![0])
         }
         placePicker.dataSource = self

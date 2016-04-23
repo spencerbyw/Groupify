@@ -25,7 +25,6 @@ class ListOfMeetingsVC: UIViewController, UITableViewDelegate, UITableViewDataSo
 
     @IBOutlet weak var meetings_table: UITableView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         let fetchRequest = NSFetchRequest(entityName: "Member")
